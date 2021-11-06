@@ -5,6 +5,8 @@ let pathFile = path.join(__dirname, 'text.txt');
 let stream = new fs.ReadStream(pathFile, {encoding: 'utf8'});
 stream.on('readable', function() {
   let data = stream.read();
-  console.log(data);
+  if (data !== null) {
+    console.log(data);
+  }
 });
 

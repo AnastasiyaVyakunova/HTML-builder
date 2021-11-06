@@ -60,7 +60,7 @@ fss.writeFile(pathIndex, '', function(){});
       let pathRC = path.join(pathAssetsCopy, file.name);
       let fC = await fs.readdir(pathRC, {withFileTypes: true});
       for (const file of fC) {
-        fss.unlink(path.join(pathRC, file.name), () => {});
+        await fs.unlink(path.join(pathRC, file.name));
       }
       await fs.rmdir(pathRC);
     }
